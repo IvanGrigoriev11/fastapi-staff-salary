@@ -1,0 +1,33 @@
+[tool.poetry]
+name = "employee_service"
+version = "0.1.0"
+description = "FastAPI service that gives the user information about his salary and the date of the next raise."
+authors = ["Ivan <11ivangrigoriev@gmail.com>"]
+readme = "README.md"
+packages = [{include = "employee_service"}]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+fastapi = "^0.97.0"
+uvicorn = {extras = ["standard"], version = "^0.22.0"}
+python-jose = {extras = ["cryptography"], version = "^3.3.0"}
+passlib = {extras = ["bcrypt"], version = "^1.7.4"}
+python-multipart = "^0.0.6"
+pyjwt = "^1.7.1"
+psycopg = {extras = ["binary", "pool"], version = "^3.1.9"}
+typer = "^0.9.0"
+psycopg-pool = "^3.1.7"
+jsons = "^1.6.3"
+pytest = "^7.4.0"
+httpx = "^0.24.1"
+types-jwt = "^0.1.3"
+pylint = "^2.17.4"
+pyright = "^1.1.316"
+isort = "^5.12.0"
+black = "^23.3.0"
+wemake-python-styleguide = "^0.18.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

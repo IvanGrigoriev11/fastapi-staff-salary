@@ -1,0 +1,25 @@
+default:
+  image: python:3.10-slim
+  before_script: 
+    - apt-get update && apt-get -y install curl
+    - curl -sSL https://install.python-poetry.org | python3 -
+    - export PATH="/root/.local/bin:$PATH"
+    - poetry install
+    - poetry install -E development
+    - source /root/.cache/pypoetry/virtualenvs/task4-yRjEoWuA-py3.10/bin/activate
+
+stages:
+  - tests
+
+tests:
+  stage: tests
+  script:
+    - python -m pytest tests
+  rules:
+    - changes: 
+      - src/*
+      - tests/*
+  
+variables:
+  JWT_TOKEN_TYPE: "bearer"
+
